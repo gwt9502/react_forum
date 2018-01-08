@@ -1,0 +1,29 @@
+.headerBackground{
+  background: #41b883;
+  height: 56px;
+  display: flex;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  z-index: 3;
+  position: relative;
+  justify-content: center;
+  i{
+    font-size: 25px;
+    color: #fff;
+  }
+}

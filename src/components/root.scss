@@ -1,0 +1,15 @@
+.navbar{
+  height: 48px;
+  width: 100%;
+  justify-content: space-around;
+  li{
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    color: rgba(31,45,61,.7);
+    .active{
+      color: #1f2d3d;
+      font-size: .3rem;
+    }
+  }
+}
