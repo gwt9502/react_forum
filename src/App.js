@@ -21,7 +21,7 @@ class App extends Component {
               <Route path="/comment" component={Comment} />
               <Route path="/login" component={Login} />
               <Route path="/newsDetails/:id" component={Detail} />
-              <Redirect from="/" to="/home" />
+              {/* <Redirect from="/" to="/home" /> */}
               <Route component={Home} />
             </Switch>
             { this.props.showCommon ? <Footer /> : null }
