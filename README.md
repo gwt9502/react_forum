@@ -3,8 +3,6 @@
   <a href="https://github.com/ReactTraining/react-router"><img src="https://img.shields.io/badge/react--router-v4.2.0-blue.svg" alt="react-router"></a>
   <a href="https://github.com/reactjs/redux"><img src="https://img.shields.io/badge/redux-v3.7.2-blue.svg" alt="redux"></a>
   <a href="https://github.com/reactjs/react-redux"><img src="https://img.shields.io/badge/react--redux-v5.0.6-blue.svg" alt="react-redux"></a>
-  <a href="https://github.com/reactjs/react-transition-group"><img src="https://img.shields.io/badge/react--transition--group-v2.2.1-blue.svg" alt="react-transition-group"></a>
-  <a href="https://github.com/jasonslyvia/react-lazyload"><img src="https://img.shields.io/badge/react--lazyload-v2.3.0-yellow.svg" alt="react-lazyload"></a>
 </p>
 This is a react webapp. Build width [Create React App](https://github.com/facebookincubator/create-react-app).
 
