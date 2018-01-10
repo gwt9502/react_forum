@@ -12,6 +12,8 @@ const initialState = {
   loading: true, // 加载
   showCommon: true, // 显示头和底
   currentTab: 'all', // 当前分类
+  showScrollLoading: false,  // 显示加载图标
+  isToEnd: false, // 是否到底
 };
 
 //拆分Reducer
@@ -21,6 +23,8 @@ function showDataLists(showDataLists = initialState.showDataLists, action) {
 	switch (action.type) {
 		case ActionTypes.SAVESHOWDATA:
 			return action.data;
+    case ActionTypes.PUSHSHOWDATA:
+      return [...showDataLists, ...action.val]
 		default:
 			return showDataLists;
 	}
@@ -44,6 +48,15 @@ function loading(loading = initialState.loading, action) {
   }
 }
 
+function showScrollLoading(showScrollLoading = initialState.showScrollLoading, action) {
+  switch (action.type) {
+    case ActionTypes.CHANGESCROLLLOADING:
+      return action.bool;
+    default:
+      return showScrollLoading;
+  }
+}
+
 function showCommon(showCommon = initialState.showCommon, action) {
   switch (action.type) {
     case ActionTypes.CHANGESHOWCOMMON:
@@ -62,14 +75,25 @@ function currentTab(currentTab = initialState.currentTab, action) {
   }
 }
 
+function isToEnd(isToEnd = initialState.isToEnd, action) {
+  switch (action.type) {
+    case ActionTypes.ISTOEND:
+      return action.val
+    default:
+      return isToEnd
+  }
+}
+
 
 //合并Reducer
 const reducer = combineReducers({
   showDataLists,
   currentNewDetails,
   loading,
+  showScrollLoading,
   showCommon,
   currentTab,
+  isToEnd,
 });
 
 export default reducer

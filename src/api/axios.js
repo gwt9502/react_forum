@@ -2,7 +2,7 @@ import axios from 'axios'
 // import { changeLoading } from '../redux/actions'
 
 const Axios = axios.create({
-  // baseURL: 'https://www.vue-js.com/api/v1/,
+  baseURL: 'https://www.vue-js.com/api/v1/',
   timeout: 10000,
   responseType: 'json'
 })
@@ -35,7 +35,7 @@ const fetch = (type='get', url, options) => {
       if(response.status !== 200) {
         reject(res)
       }else {
-        resolve(res)
+        resolve(res.data)
       }
     })
     .catch((error) => {

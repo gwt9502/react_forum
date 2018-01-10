@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
 import Detail from '../components/detail/Detail'
+import fetch from '../api/axios'
 
 const mapStateToProps = (state) => ({
   currentNewsDetails: state.currentNewDetails
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  saveCurrentNewsDetails: (data) => {
-    dispatch(actions.saveNewsDetails(data))
+  saveCurrentNewsDetails: async (options) => {
+    dispatch(actions.saveNewsDetails(await fetch('get', `topic/${options}`)))
   },
   changeLoading: (bool) => {
     dispatch(actions.changeLoading(bool))

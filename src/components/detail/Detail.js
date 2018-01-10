@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import fetch from '../../api/axios'
 import './detail.scss'
 
 export default class Detail extends Component {
@@ -15,12 +14,13 @@ export default class Detail extends Component {
   }
 
   componentDidMount () {
-    this.props.changeLoading(true)
-    fetch('get', `https://www.vue-js.com/api/v1/topic/${this.props.match.params.id}`)
-    .then(async (res) => {
-      await this.props.saveCurrentNewsDetails(res.data)
-      this.props.changeLoading(false)
-    })
+    this.props.saveCurrentNewsDetails(this.props.match.params.id)
+    // this.props.changeLoading(true)
+    // fetch('get', `https://www.vue-js.com/api/v1/topic/${}`)
+    // .then(async (res) => {
+    //   await (res.data)
+    //   this.props.changeLoading(false)
+    // })
   }
 
   toggle (e) {
@@ -62,7 +62,7 @@ export default class Detail extends Component {
       </div>
     )
   }
-  
+
   render() {
     let newDetail = this.props.currentNewsDetails
     let innerHTML = () => { return {__html: newDetail.content} }
@@ -93,7 +93,7 @@ export default class Detail extends Component {
         {
           this.state.showComment ? this.showCommentHtml(newDetail) : null
         }
-        
+
       </div>
     )
   }

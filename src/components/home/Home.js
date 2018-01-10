@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getShowDataLists } from '../../api/home'
 import { NavLink } from "react-router-dom"
 import './home.scss';
 
@@ -15,38 +14,49 @@ export class Home extends Component {
         { name: '问答', val: 'ask' },
         { name: '招聘', val: 'job' }
       ],
-      options: {
-        tab: this.props.currentTab,
-        page: 0,
-        limit: 20
-      }
+      currentPage: 1
     }
   }
 
   componentWillMount () {
+    // document.getElementById('content').addEventListener('scroll', this.winscroll.bind(this))
     this.props.changeShowCommon(true)
   }
 
   componentDidMount () {
-    this.getData('get', 'https://www.vue-js.com/api/v1/topics?')
+    let options = {
+      tab: this.props.currentTab,
+      page: this.state.currentPage,
+      limit: 20
+    }
+    this.props.saveShowData(options)
   }
 
-  getData (type, url) {
-    this.props.changeLoading(true)
-    getShowDataLists(type, url, this.state.options)
-    .then((res) => {
-      this.props.saveShowData(res.data)
-      this.props.changeLoading(false)
-    })
+  contentScroll () {
+    let [scrollHeight, scrollTop, clientHeight] = [this.refs.contentUl.scrollHeight, this.refs.contentUl.scrollTop, this.refs.contentUl.clientHeight]
+    if (scrollHeight === scrollTop + clientHeight) {
+      this.setState({currentPage: this.state.currentPage++})
+      let options = {
+        tab: this.props.currentTab,
+        page: this.state.currentPage,
+        limit: 20
+      }
+      this.props.pushShowData(options)
+    } else {
+      return
+    }
   }
 
   async changeTab(val, index) {
     await this.props.changeTab(val)
-    let obj = {
-      tab: val
+    this.setState({currentPage: 1})
+    this.refs.contentUl.scrollTop = 0
+    let options = {
+      tab: val,
+      page: this.state.currentPage,
+      limit: 20
     }
-    this.setState({ options: Object.assign(this.state.options, obj) })
-    await this.getData('get', 'https://www.vue-js.com/api/v1/topics?')
+    await this.props.saveShowData(options)
   }
 
   render() {
@@ -56,14 +66,14 @@ export class Home extends Component {
           {
             this.state.navabrLists.map((item, index) => {
               return (
-                <li className={ "item flex " + (this.state.options.tab === item.val ? 'active' : '') } key={index} onClick={this.changeTab.bind(this, item.val, index)}>
+                <li className={ "item flex " + (this.props.currentTab === item.val ? 'active' : '') } key={index} onClick={this.changeTab.bind(this, item.val, index)}>
                 {item.name}
                 </li>
               )
             })
           }
         </ul>
-        <ul className="content">
+        <ul className="content" id="content" onScroll={!this.props.isToEnd && !this.props.showScrollLoading ? this.contentScroll.bind(this) : null} ref="contentUl">
           {
             this.props.showDataLists.map((item, index) => {
               return (
@@ -75,7 +85,7 @@ export class Home extends Component {
                           <img src={item.author.avatar_url} alt=""/>
                       </div>
                       <div className="title">{item.title}</div>
-                      <div className="type">{item.tab}</div>                    
+                      <div className="type">{item.tab}</div>
                     </div>
                     <div className="content_li_footer flex">
                       <div className="footer_left flex">
@@ -92,7 +102,13 @@ export class Home extends Component {
               )
             })
           }
+          {
+            this.props.isToEnd ? <p style={{textAlign: 'center'}}>别刷新了，我已经到底了...</p> : null
+          }
         </ul>
+        {
+          this.props.showScrollLoading ? <p className="scrollLoading flex"><i className="iconfont icon-loading"></i><span>加载中...</span></p> : null
+        }
       </section>
     )
   }
