@@ -33,7 +33,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Screenshot
 
 <p align="center">
-  <img src="https://guanweitao.github.io/react_forum/screenshot/home.png" alt="recommend" style="max-width:50%!important" />
-  <img src="https://guanweitao.github.io/react_forum/screenshot/detail.png" style="max-width:50%!important" alt="ranking"/>
-  <img src="https://guanweitao.github.io/react_forum/screenshot/com.png" style="max-width:50%!important" alt="singer"/>
+  <img src="https://guanweitao.github.io/react_forum/screenshot/home.png" width="50%" alt="recommend" />
+  <img src="https://guanweitao.github.io/react_forum/screenshot/detail.png" width="50%" alt="ranking"/>
+  <img src="https://guanweitao.github.io/react_forum/screenshot/com.png" width="50%" alt="singer"/>
 </p>
