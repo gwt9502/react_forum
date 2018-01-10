@@ -1,8 +1,9 @@
 <p align="center">
-  <a href="https://github.com/facebook/react"><img src="https://img.shields.io/badge/react-v16.2.0-blue.svg" alt="react"></a>
-  <a href="https://github.com/ReactTraining/react-router"><img src="https://img.shields.io/badge/react--router-v4.2.0-blue.svg" alt="react-router"></a>
+  <a href="https://github.com/facebook/react"><img src="https://img.shields.io/badge/react-16.2.0-brightgreen.svg" alt="react"></a>
+  <a href="https://github.com/ReactTraining/react-router"><img src="https://img.shields.io/badge/react--router-4.2.2-red.svg" alt="react-router"></a>
   <a href="https://github.com/reactjs/redux"><img src="https://img.shields.io/badge/redux-v3.7.2-blue.svg" alt="redux"></a>
   <a href="https://github.com/reactjs/react-redux"><img src="https://img.shields.io/badge/react--redux-v5.0.6-blue.svg" alt="react-redux"></a>
+  <a href="https://github.com/axios/axios"><img src="https://img.shields.io/badge/axios-0.17.1-yellow.svg"></a>
 </p>
 This is a react webapp. Build width [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -32,7 +33,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Screenshot
 
 <p align="center">
-  <img src="https://guanweitao.github.io/react_forum/screenshot/home.png" alt="recommend" style="max-width:100%" />
-  <img src="https://guanweitao.github.io/react_forum/screenshot/detail.png" style="max-width:100%" alt="ranking"/>
-  <img src="https://guanweitao.github.io/react_forum/screenshot/com.png" style="max-width:100%" alt="singer"/>
+  <img src="https://guanweitao.github.io/react_forum/screenshot/home.png" alt="recommend" style="max-width:50%" />
+  <img src="https://guanweitao.github.io/react_forum/screenshot/detail.png" style="max-width:50%" alt="ranking"/>
+  <img src="https://guanweitao.github.io/react_forum/screenshot/com.png" style="max-width:50%" alt="singer"/>
 </p>
