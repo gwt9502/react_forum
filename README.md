@@ -1,6 +1,6 @@
 This is a react webapp. Build width [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Online preview address: https://guanweitao.github.io/react_forum/.
+Online preview address: https://github.com/guanweitao/react_forum/.
 
 ## Technology Stack
 
@@ -26,7 +26,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Screenshot
 
 <p align="center">
-  <img src="https://guanweitao.github.io/react_forum/screenshot/home.png" alt="recommend"/>
-  <img src="https://guanweitao.github.io/react_forum/screenshot/detail.png" alt="ranking"/>
-  <img src="https://guanweitao.github.io/react_forum/screenshot/com.png" alt="singer"/>
+  <img src="https://github.com/guanweitao/react_forum/screenshot/home.png" alt="recommend"/>
+  <img src="https://github.com/guanweitao/react_forum/screenshot/detail.png" alt="ranking"/>
+  <img src="https://github.com/guanweitao/react_forum/screenshot/com.png" alt="singer"/>
 </p>
