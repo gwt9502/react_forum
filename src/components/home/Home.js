@@ -32,10 +32,11 @@ export class Home extends Component {
     this.props.saveShowData(options)
   }
 
-  contentScroll () {
+  async contentScroll () {
     let [scrollHeight, scrollTop, clientHeight] = [this.refs.contentUl.scrollHeight, this.refs.contentUl.scrollTop, this.refs.contentUl.clientHeight]
     if (scrollHeight === scrollTop + clientHeight) {
-      this.setState({currentPage: this.state.currentPage++})
+      let page = this.state.currentPage + 1
+      await this.setState({currentPage: page})
       let options = {
         tab: this.props.currentTab,
         page: this.state.currentPage,
