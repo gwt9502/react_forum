@@ -7,7 +7,7 @@
 </p>
 This is a react webapp. Build width [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Online preview address: https://guanweitao.github.io/react_forum/
+Online preview address: https://gwt9502.github.io/react_forum/
 
 ## Technology Stack
 
